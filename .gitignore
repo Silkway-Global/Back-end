@@ -3,7 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtualenv
+media/
 venv/
 
 # Django
@@ -23,6 +23,3 @@ venv/
 
 # MacOS
 .DS_Store
-
-# Windows
-Thumbs.db 
