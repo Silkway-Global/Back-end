@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 
->>>>>>> e0a3debe086c2d48126bb8e77d059308b1854cc9
 # Project Setup Guide
 
 ## Prerequisites
@@ -21,15 +18,9 @@
    
    Ensure the `.env` file is correctly set up in the `static` directory with the following variables:
    ```
-<<<<<<< HEAD
    DB_NAME=silkwayglobal
    DB_USER=postgres
    DB_PASSWORD=@Grandtalim1
-=======
-   DB_NAME=<any_name_you_want>
-   DB_USER=postgres
-   DB_PASSWORD=<any_psw_you_want>
->>>>>>> e0a3debe086c2d48126bb8e77d059308b1854cc9
    DB_HOST=db
    DB_PORT=5432
    ```
@@ -70,8 +61,4 @@
 
 ## Notes
 
-<<<<<<< HEAD
 - The `version` attribute in `docker-compose.yaml` is obsolete and can be removed to avoid warnings. 
-=======
-- The `version` attribute in `docker-compose.yaml` is obsolete and can be removed to avoid warnings. 
->>>>>>> e0a3debe086c2d48126bb8e77d059308b1854cc9
