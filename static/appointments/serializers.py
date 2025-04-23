@@ -10,4 +10,7 @@ class AppointmentSerializer(serializers.ModelSerializer):
                   'preferred_time', 
                   'message', 
                   'created_at']
-        
+        extra_kwargs = {
+                'owner': {'read_only': True}
+            }
+

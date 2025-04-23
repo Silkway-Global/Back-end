@@ -13,3 +13,6 @@ class TestimonialSerializer(serializers.ModelSerializer):
                   'country', 
                   'created_at', 
                   'updated_at']
+        extra_kwargs = {
+                'owner': {'read_only': True}
+            }

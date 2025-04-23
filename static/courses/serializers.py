@@ -5,6 +5,7 @@ class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
         fields = ['id',
+                  'owner',
                   'title', 
                   'description', 
                   'duration_weeks', 
@@ -12,4 +13,7 @@ class CourseSerializer(serializers.ModelSerializer):
                   'country', 
                   'category', 
                   'start_date', 
-                  'image']
+                  'image',]
+        extra_kwargs = {
+                'owner': {'read_only': True}
+            }

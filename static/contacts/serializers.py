@@ -10,3 +10,6 @@ class ContactMessageSerializer(serializers.ModelSerializer):
                   'subject', 
                   'message', 
                   'sent_at']
+        extra_kwargs = {
+                'owner': {'read_only': True}
+            }

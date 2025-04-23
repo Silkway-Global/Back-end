@@ -7,6 +7,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     list_filter = ('category', 'created_at')
     search_fields = ('title', 'content', 'owner__email', 'owner__full_name')
     prepopulated_fields = {'slug': ('title',)}
+    fields = ('title', 'slug', 'content', 'image', 'category', 'created_at', 'owner')
     
     def get_queryset(self, request):
         qs = super().get_queryset(request)
