@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from accounts.choices import UserTypeChoices
-from .filters import CourseFilter
+from .filter import CourseFilter
 from .models import Course
 from .serializers import CourseSerializer
 from rest_framework.permissions import IsAuthenticated

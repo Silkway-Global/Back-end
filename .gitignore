@@ -11,9 +11,6 @@ venv/
 *.pot
 *.pyc
 
-# Database
-*.sqlite3
-
 # Environments
 .env
 
