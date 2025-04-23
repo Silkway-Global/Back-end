@@ -18,9 +18,9 @@
    
    Ensure the `.env` file is correctly set up in the `static` directory with the following variables:
    ```
-   DB_NAME=silkwayglobal
+   DB_NAME=<any_name_you_want>
    DB_USER=postgres
-   DB_PASSWORD=@Grandtalim1
+   DB_PASSWORD=<any_psw_you_want>
    DB_HOST=db
    DB_PORT=5432
    ```
