@@ -10,8 +10,8 @@
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/Silkway-Global/Back-end.git
+   cd BACK-END
    ```
 
 2. **Environment Variables**
