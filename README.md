@@ -1,23 +1,30 @@
+# 🚀 Silkway Global Backend
 
-# Project Setup Guide
+<div align="center">
 
-## Prerequisites
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue?style=for-the-badge&logo=docker)](https://www.docker.com/)
+[![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql)](https://www.postgresql.org/)
 
-- Docker
-- Docker Compose
+</div>
 
-## Setup Instructions
+## 📋 Prerequisites
 
-1. **Clone the Repository**
+- 🐳 Docker
+- 🔄 Docker Compose
+
+## 🔧 Setup Instructions
+
+### 1. **Clone the Repository**
    ```bash
    git clone https://github.com/Silkway-Global/Back-end.git
    cd BACK-END
    ```
 
-2. **Environment Variables**
+### 2. **Environment Variables** ⚙️
    
    Ensure the `.env` file is correctly set up in the `static` directory with the following variables:
-   ```
+   ```env
    DB_NAME=silkwayglobal
    DB_USER=postgres
    DB_PASSWORD=@Grandtalim1
@@ -25,7 +32,7 @@
    DB_PORT=5432
    ```
 
-3. **Build and Run the Containers**
+### 3. **Build and Run the Containers** 🏗️
    
    Navigate to the `static` directory and run:
    ```bash
@@ -34,31 +41,32 @@
    
    This will build the Docker images and start the containers.
 
-4. **Access the Application**
+### 4. **Access the Application** 🌐
    
    The application will be accessible at `http://localhost:8000`. 
 
-   **Manual Migration Required**: To apply database migrations, go to Docker -> `static-web-1` container -> `EXEC` and run:
-   ```bash
-   python manage.py migrate
-   ```
+   > **⚠️ Important:** Manual Migration Required
+   > 
+   > To apply database migrations, go to Docker → `static-web-1` container → `EXEC` and run:
+   > ```bash
+   > python manage.py migrate
+   > ```
 
-5. **Stopping the Containers**
+### 5. **Stopping the Containers** 🛑
    
    To stop the running containers, use:
    ```bash
    docker-compose down
    ```
 
-## Troubleshooting
+## ❓ Troubleshooting
 
-- Ensure Docker and Docker Compose are installed and running.
-- Verify that the `.env` file is correctly configured.
-- Check the logs for any errors using:
-  ```bash
-  docker-compose logs
-  ```
+| Issue | Solution |
+|-------|----------|
+| Docker not running | Ensure Docker and Docker Compose are installed and running |
+| Environment issues | Verify that the `.env` file is correctly configured |
+| Container errors | Check the logs using: `docker-compose logs` |
 
-## Notes
+## 📝 Notes
 
-- The `version` attribute in `docker-compose.yaml` is obsolete and can be removed to avoid warnings. 
+- The `version` attribute in `docker-compose.yaml` is obsolete and can be removed to avoid warnings.
