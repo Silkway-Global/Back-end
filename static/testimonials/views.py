@@ -17,9 +17,9 @@ class TestimonialViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         if user.user_type == UserTypeChoices.ADMIN:
-            return Testimonial.objects.all()
+            return Testimonial.objects.all().order_by('-created_at')
         elif user.user_type == UserTypeChoices.STUDENT:
-            return Testimonial.objects.filter(owner=user)
+            return Testimonial.objects.filter(owner=user).order_by('-created_at')
         return Testimonial.objects.none()
 
     def perform_create(self, serializer):
@@ -28,4 +28,5 @@ class TestimonialViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         if self.request.user.user_type == UserTypeChoices.STUDENT and serializer.instance.owner != self.request.user:
             raise PermissionDenied("You do not have permission to edit this testimonial, because this is not your testimonial!!!")
+        serializer.save()
 

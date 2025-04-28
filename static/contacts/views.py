@@ -14,9 +14,9 @@ class ContactMessageViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         if user.user_type == UserTypeChoices.ADMIN:
-            return ContactMessage.objects.all()
+            return ContactMessage.objects.all().order_by('-created_at')
         elif user.user_type == UserTypeChoices.STUDENT:
-            return ContactMessage.objects.filter(owner=user)
+            return ContactMessage.objects.filter(owner=user).order_by('-created_at')
         return ContactMessage.objects.none()
 
     def perform_create(self, serializer):
@@ -25,5 +25,6 @@ class ContactMessageViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         if self.request.user.user_type == UserTypeChoices.STUDENT and serializer.instance.owner != self.request.user:
             raise PermissionDenied("You do not have permission to edit this message, because this is not your message!!!")
+        serializer.save()
 
 

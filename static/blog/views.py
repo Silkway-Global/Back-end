@@ -14,7 +14,7 @@ class BlogPostViewSet(viewsets.ModelViewSet):
     filterset_class = BlogPostFilter
 
     def get_queryset(self):
-        return BlogPost.objects.all()
+        return BlogPost.objects.all().order_by('-created_at')
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)

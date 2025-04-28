@@ -51,6 +51,11 @@
    > ```bash
    > python manage.py migrate
    > ```
+   > 
+   > Alternatively, you can run the migration command directly in your terminal:
+   > ```bash
+   > docker exec -it static-web-1 python manage.py migrate
+   > ```
 
 ### 5. **Stopping the Containers** 🛑
    

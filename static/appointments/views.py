@@ -16,9 +16,9 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user = self.request.user
         if user.user_type == UserTypeChoices.ADMIN:
-            return Appointment.objects.all()
+            return Appointment.objects.all().order_by('-preferred_date')
         elif user.user_type == UserTypeChoices.STUDENT:
-            return Appointment.objects.filter(owner=user)
+            return Appointment.objects.filter(owner=user).order_by('-preferred_date')
         return Appointment.objects.none()
     
     def perform_create(self, serializer):
@@ -27,3 +27,4 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         if self.request.user.user_type == UserTypeChoices.STUDENT and serializer.instance.owner != self.request.user:
             raise PermissionDenied("You do not have permission to edit this appointment, because this is not your appointment!!!")
+        serializer.save()
