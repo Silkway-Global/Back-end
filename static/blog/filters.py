@@ -1,6 +1,7 @@
 from django_filters import rest_framework as filters
-from .models import BlogPost
 from datetime import datetime
+
+from .models import BlogPost
 
 class BlogPostFilter(filters.FilterSet):
     created_at = filters.CharFilter(method='filter_created_at')

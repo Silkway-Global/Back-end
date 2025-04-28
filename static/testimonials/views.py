@@ -1,10 +1,11 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import PermissionDenied
+
+from accounts.choices import UserTypeChoices
+from .filters import TestimonialFilter
 from .models import Testimonial
 from .serializers import TestimonialSerializer
-from rest_framework.permissions import IsAuthenticated
-from accounts.choices import UserTypeChoices
-from rest_framework.exceptions import PermissionDenied
-from .filters import TestimonialFilter
 
 
 class TestimonialViewSet(viewsets.ModelViewSet):

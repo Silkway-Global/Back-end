@@ -1,12 +1,11 @@
-from django.shortcuts import render
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.exceptions import PermissionDenied
 
 from accounts.choices import UserTypeChoices
 from .filter import CourseFilter
 from .models import Course
 from .serializers import CourseSerializer
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.exceptions import PermissionDenied
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()

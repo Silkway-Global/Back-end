@@ -1,6 +1,7 @@
 from django.db import models
-from .choices import UserTypeChoices
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+
+from .choices import UserTypeChoices
 
 
 class CustomUserManager(BaseUserManager):

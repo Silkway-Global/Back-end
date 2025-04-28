@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Testimonial
+
 from accounts.choices import UserTypeChoices
+from .models import Testimonial
 
 class TestimonialAdmin(admin.ModelAdmin):
     list_display = ('owner', 'university', 'country', 'created_at')

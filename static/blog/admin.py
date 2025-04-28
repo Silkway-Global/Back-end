@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import BlogPost
+
 from accounts.choices import UserTypeChoices
+from .models import BlogPost
 
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'owner', 'category', 'created_at', 'updated_at')

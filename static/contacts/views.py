@@ -1,10 +1,10 @@
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated  
+from rest_framework.exceptions import PermissionDenied
 
 from accounts.choices import UserTypeChoices
 from .models import ContactMessage
 from .serializers import ContactMessageSerializer
-from rest_framework.permissions import IsAuthenticated  
-from rest_framework.exceptions import PermissionDenied
 
 class ContactMessageViewSet(viewsets.ModelViewSet):
     queryset = ContactMessage.objects.all()

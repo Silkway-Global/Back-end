@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import ContactMessage
+
 from accounts.choices import UserTypeChoices
+from .models import ContactMessage
 
 class ContactMessageAdmin(admin.ModelAdmin):
     list_display = ('subject', 'owner', 'sent_at')

@@ -1,9 +1,11 @@
 from django.conf import settings
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import UserViewSet, RegisterView
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from django.conf.urls.static import static
+
+from .views import UserViewSet, RegisterView
+
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet)
