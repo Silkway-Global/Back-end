@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied
 
 from accounts.choices import UserTypeChoices
-from .filter import CourseFilter
+from .filters import CourseFilter
 from .models import Course
 from .serializers import CourseSerializer
 

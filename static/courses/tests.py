@@ -52,7 +52,7 @@ class CourseTests(TestCase):
             duration_weeks=8,
             price=self.course_price,
             country='United States',
-            category='Programming',
+            category='Language',
             start_date=self.course_start_date,
             image='test_image.jpg'
         )
@@ -65,7 +65,7 @@ class CourseTests(TestCase):
             'duration_weeks': 12,
             'price': '299.99',  # String format for serializers
             'country': 'Canada',
-            'category': 'Data Science',
+            'category': 'Language',
             'start_date': self.new_start_date.isoformat()
         }
         
@@ -102,7 +102,7 @@ class CourseTests(TestCase):
                 duration_weeks=4+i,
                 price=Decimal(f'{100+i*10}.99'),
                 country='United States',
-                category='Programming',
+                category='Language',
                 start_date=start_date
             )
             
@@ -271,21 +271,21 @@ class CourseTests(TestCase):
             duration_weeks=10,
             price=Decimal('299.99'),
             country='United States',
-            category='Data Science',
+            category='Language',
             start_date=datetime.date.today() + datetime.timedelta(days=45)
         )
         
         url = reverse('course-list')
-        response = self.client.get(url, {'category': 'Data Science'})
+        response = self.client.get(url, {'category': 'Language'})
         
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         # If filtering works, we should have only the Data Science category courses in the results
         if 'results' in response.data:
-            data_science_courses = [c for c in response.data['results'] if c['category'] == 'Data Science']
-            self.assertTrue(len(data_science_courses) > 0)
+            language_courses = [c for c in response.data['results'] if c['category'] == 'Language']
+            self.assertTrue(len(language_courses) > 0)
         else:
-            data_science_courses = [c for c in response.data if c['category'] == 'Data Science']
-            self.assertTrue(len(data_science_courses) > 0)
+            language_courses = [c for c in response.data if c['category'] == 'Language']
+            self.assertTrue(len(language_courses) > 0)
         
     def test_filter_courses_by_price_range(self):
         """Test filtering courses by price range"""
@@ -297,7 +297,7 @@ class CourseTests(TestCase):
             duration_weeks=16,
             price=Decimal('999.99'),
             country='United States',
-            category='Programming',
+            category='Language',
             start_date=datetime.date.today() + datetime.timedelta(days=30)
         )
         
@@ -308,7 +308,7 @@ class CourseTests(TestCase):
             duration_weeks=4,
             price=Decimal('49.99'),
             country='United States',
-            category='Programming',
+            category='Language',
             start_date=datetime.date.today() + datetime.timedelta(days=15)
         )
         
