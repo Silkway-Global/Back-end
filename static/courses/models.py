@@ -14,5 +14,10 @@ class Course(models.Model):
     start_date = models.DateField()
     image = models.ImageField(upload_to='course_images/')
 
+    # for stats
+    requests = models.PositiveIntegerField(default=0)
+
+    
+
     def __str__(self):
         return self.title

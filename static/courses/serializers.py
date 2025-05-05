@@ -14,6 +14,7 @@ class CourseSerializer(serializers.ModelSerializer):
                   'country', 
                   'category', 
                   'start_date', 
+                  'requests',
                   'image',]
         extra_kwargs = {
                 'owner': {'read_only': True}

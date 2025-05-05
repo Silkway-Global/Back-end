@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'contacts',
     'blog',
     'accounts',
+    'stats',
 
     #jwt
     'rest_framework_simplejwt',
