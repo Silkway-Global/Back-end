@@ -30,6 +30,8 @@
    DB_PASSWORD=@Grandtalim1
    DB_HOST=db
    DB_PORT=5432
+
+   SECRET_KEY='django-insecure-gibvmrc^#%tgn#1f1ok6&k+xqmt*f70^gw&e9!g=szz23le)#s'
    ```
 
 ### 3. **Build and Run the Containers** 🏗️
