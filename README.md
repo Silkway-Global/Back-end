@@ -23,14 +23,11 @@
 
 ### 2. **Environment Variables** ⚙️
    
-   Ensure the `.env` file is correctly set up in the `static` directory with the following variables:
-   ```env
-   DB_NAME=silkwayglobal
-   DB_USER=postgres
-   DB_PASSWORD=@Grandtalim1
-   DB_HOST=db
-   DB_PORT=5432
+   Ensure that u got `.env` file in WhatsApp group, and make sure that u placed it:
    ```
+   .../Back-end/static/.env
+   ```
+
 
 ### 3. **Build and Run the Containers** 🏗️
    
