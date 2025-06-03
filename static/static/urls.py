@@ -20,13 +20,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),    
     
     # apps  
-    path('accounts/', include('accounts.urls')),
-    path('courses/', include('courses.urls')),
-    path('testimonials/', include('testimonials.urls')),
-    path('appointments/', include('appointments.urls')),
-    path('contacts/', include('contacts.urls')),
-    path('blog/', include('blog.urls')),
-    path('stats/', include('stats.urls')),
+    path('api/v1/', include('accounts.urls')),
+    path('api/v1/', include('courses.urls')),
+    path('api/v1/', include('testimonials.urls')),
+    path('api/v1/', include('appointments.urls')),
+    path('api/v1/', include('contacts.urls')),
+    path('api/v1/', include('blog.urls')),
+    path('api/v1/', include('stats.urls')),
     # swagger
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

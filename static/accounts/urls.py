@@ -8,7 +8,7 @@ from .views import UserViewSet, RegisterView
 
 
 router = DefaultRouter()
-router.register(r'users', UserViewSet)
+router.register(r'accounts', UserViewSet)
 
 
 urlpatterns = [
