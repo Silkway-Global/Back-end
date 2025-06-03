@@ -4,7 +4,7 @@ from accounts.models import CustomUser
 
 
 class Appointment(models.Model):
-    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    owner = models.ForeignKey(CustomUser, on_delete=models.SET_NULL, null=True, blank=True)
     preferred_date = models.DateField()
     preferred_time = models.TimeField()
     message = models.TextField(blank=True, null=True)
