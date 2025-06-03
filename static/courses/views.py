@@ -6,6 +6,7 @@ from accounts.choices import UserTypeChoices
 from .filters import CourseFilter
 from .models import Course
 from .serializers import CourseSerializer
+from .pagination import CoursePagination
 from stats.models import CourseView
 
 class CourseViewSet(viewsets.ModelViewSet):
@@ -13,6 +14,7 @@ class CourseViewSet(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
     permission_classes = (AllowAny,)
     filterset_class = CourseFilter
+    pagination_class = CoursePagination
 
     def get_queryset(self):
         return Course.objects.all().order_by('-start_date')    
