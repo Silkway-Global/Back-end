@@ -73,4 +73,4 @@
 
 ## 📝 Notes
 
-- The `version` attribute in `docker-compose.yaml` is obsolete and can be removed to avoid warnings.
+- The `version` attribute in `docker-compose.yaml` is obsolete and can be removed or changed to avoid warnings.
