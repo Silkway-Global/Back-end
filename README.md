@@ -46,11 +46,13 @@
    > 
    > To apply database migrations, go to Docker → `static-web-1` container → `EXEC` and run:
    > ```bash
+>    python manage.py makemigrations <all applications>
    > python manage.py migrate
    > ```
    > 
    > Alternatively, you can run the migration command directly in your terminal:
    > ```bash
+>    docker exec -it static-web-1 python manage.py makemigrations <all applications name>
    > docker exec -it static-web-1 python manage.py migrate
    > ```
 
