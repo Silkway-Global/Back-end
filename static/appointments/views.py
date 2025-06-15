@@ -1,10 +1,10 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny
 from rest_framework.exceptions import PermissionDenied
 
 from accounts.choices import UserTypeChoices
-from .models import Appointment
-from .serializers import AppointmentSerializer
+from .models import Appointment, Consultation
+from .serializers import AppointmentSerializer, ConsultationSerializer
 
 
 class AppointmentViewSet(viewsets.ModelViewSet):
@@ -28,3 +28,9 @@ class AppointmentViewSet(viewsets.ModelViewSet):
         if self.request.user.user_type == UserTypeChoices.STUDENT and serializer.instance.owner != self.request.user:
             raise PermissionDenied("You do not have permission to edit this appointment, because this is not your appointment!!")
         serializer.save()
+
+
+class ConsultationViewSet(viewsets.ModelViewSet):
+    queryset = Consultation.objects.all()
+    serializer_class = ConsultationSerializer
+    permission_classes = (AllowAny,)
